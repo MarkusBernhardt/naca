@@ -7,49 +7,50 @@
 package com.github.markusbernhardt.jlib.misc;
 
 /**
- * <p>Service de Mail</p>
- * <p>Copyright: Copyright (c) 2003</p>
- * <p>Company: Consultas</p>
+ * <p>
+ * Service de Mail
+ * </p>
+ * <p>
+ * Copyright: Copyright (c) 2003
+ * </p>
+ * <p>
+ * Company: Consultas
+ * </p>
+ * 
  * @author <a href=mailto:dbarman@consultas.ch>Barman Dominique</a>
  * @version 1.0
  */
 
-public class MailService 
-{
-	private String m_csSMTPServer = null;
-	private String m_csAddressFrom = null;
-	private StringArray m_arrAddressTo = new StringArray() ;
-	
-	public MailService(String smtp, String from) 
-	{
-		this.m_csSMTPServer = smtp;
-		this.m_csAddressFrom = from;
-	}
+public class MailService {
+  private String m_csSMTPServer = null;
+  private String m_csAddressFrom = null;
+  private StringArray m_arrAddressTo = new StringArray();
 
-	public Mail createMail() 
-	{
-		Mail m = new Mail(this);
-		m.setFrom(m_csAddressFrom);
-		for (int i=0; i<m_arrAddressTo.size(); i++)
-		{
-			String add = m_arrAddressTo.get(i) ;
-			m.addTo(add);
-		}
-		return m ;
-	}
+  public MailService(String smtp, String from) {
+    this.m_csSMTPServer = smtp;
+    this.m_csAddressFrom = from;
+  }
 
-	public String getSMTPServer() 
-	{
-		return m_csSMTPServer;
-	}
-//
-//	public String getFrom() 
-//	{
-//		return m_csAddressFrom;
-//	}
+  public Mail createMail() {
+    Mail m = new Mail(this);
+    m.setFrom(m_csAddressFrom);
+    for (int i = 0; i < m_arrAddressTo.size(); i++) {
+      String add = m_arrAddressTo.get(i);
+      m.addTo(add);
+    }
+    return m;
+  }
 
-	public void addAddressTo(String add) 
-	{
-		m_arrAddressTo.add(add); 
-	}
+  public String getSMTPServer() {
+    return m_csSMTPServer;
+  }
+  //
+  // public String getFrom()
+  // {
+  // return m_csAddressFrom;
+  // }
+
+  public void addAddressTo(String add) {
+    m_arrAddressTo.add(add);
+  }
 }

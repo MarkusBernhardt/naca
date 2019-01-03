@@ -14,14 +14,12 @@ package com.github.markusbernhardt.jlib.misc;
  * @author Pierre-Jean Ditscheid, Consultas SA
  * @version $Id$
  */
-public class JSonCoupleItemType
-{
-	public static JSonCoupleItemType TypeString = new JSonCoupleItemType();
-	public static JSonCoupleItemType TypeInteger = new JSonCoupleItemType();
-	public static JSonCoupleItemType TypeDouble = new JSonCoupleItemType();
-	public static JSonCoupleItemType TypeBoolean = new JSonCoupleItemType();
-	
-	public JSonCoupleItemType()
-	{
-	}
+public class JSonCoupleItemType {
+  public static JSonCoupleItemType TypeString = new JSonCoupleItemType();
+  public static JSonCoupleItemType TypeInteger = new JSonCoupleItemType();
+  public static JSonCoupleItemType TypeDouble = new JSonCoupleItemType();
+  public static JSonCoupleItemType TypeBoolean = new JSonCoupleItemType();
+
+  public JSonCoupleItemType() {
+  }
 }

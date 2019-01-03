@@ -14,20 +14,17 @@ import java.sql.SQLException;
 /**
  *
  * @author Pierre-Jean Ditscheid, Consultas SA
- * @version $Id: SQLClauseSPParamInString.java,v 1.1 2007/10/16 09:47:08 u930di Exp $
+ * @version $Id: SQLClauseSPParamInString.java,v 1.1 2007/10/16 09:47:08 u930di
+ *          Exp $
  */
-public class SQLClauseSPParamInString extends SQLClauseSPParamIn
-{
-	private String m_csVal = null;
-	
-	public SQLClauseSPParamInString(String csVal)
-	{
-		m_csVal = csVal;
-	}
-	
-	protected void setInValueWithException(int nParamId, DbPreparedCallableStatement stmt)
-		throws SQLException
-	{
-		stmt.setInValueWithException(nParamId, m_csVal);
-	}
+public class SQLClauseSPParamInString extends SQLClauseSPParamIn {
+  private String m_csVal = null;
+
+  public SQLClauseSPParamInString(String csVal) {
+    m_csVal = csVal;
+  }
+
+  protected void setInValueWithException(int nParamId, DbPreparedCallableStatement stmt) throws SQLException {
+    stmt.setInValueWithException(nParamId, m_csVal);
+  }
 }

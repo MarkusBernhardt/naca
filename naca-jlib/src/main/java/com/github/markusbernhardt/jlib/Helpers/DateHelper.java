@@ -12,6 +12,5 @@ import com.github.markusbernhardt.jlib.misc.DateUtil;
  * DateHelper is deprectqed and shouls by replaced by DateUtil
  */
 @Deprecated
-public class DateHelper extends DateUtil
-{
+public class DateHelper extends DateUtil {
 }

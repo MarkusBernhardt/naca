@@ -9,26 +9,25 @@
 
 package com.github.markusbernhardt.jlib.log.stdEvents;
 
-import com.github.markusbernhardt.jlib.log.*;
+import com.github.markusbernhardt.jlib.log.Log;
+import com.github.markusbernhardt.jlib.log.LogEvent;
+import com.github.markusbernhardt.jlib.log.LogEventType;
+import com.github.markusbernhardt.jlib.log.LogFlowStd;
+import com.github.markusbernhardt.jlib.log.LogLevel;
 
-public class LoadConfigError extends LogEvent
-{
-	public LoadConfigError(String csProduct)
-	{
-		super(LogEventType.Error, LogFlowStd.Monitoring, LogLevel.Critical, csProduct);
-	}
-	
-	public static LogEvent log(String csChannel, String csProduct, String csName, String csMessage)
-	{
-		LoadConfigError event = new LoadConfigError(csProduct);
-		event.fillMember("Name", csName);
-		Log.log(csChannel, event, csMessage);
-		return event;
-	}
+public class LoadConfigError extends LogEvent {
+  public LoadConfigError(String csProduct) {
+    super(LogEventType.Error, LogFlowStd.Monitoring, LogLevel.Critical, csProduct);
+  }
 
+  public static LogEvent log(String csChannel, String csProduct, String csName, String csMessage) {
+    LoadConfigError event = new LoadConfigError(csProduct);
+    event.fillMember("Name", csName);
+    Log.log(csChannel, event, csMessage);
+    return event;
+  }
 
-	public static LogEvent log(String csChannel, String csName, String csMessage)
-	{
-		return LoadConfigError.log(csChannel, null, csName, csMessage);
-	}
+  public static LogEvent log(String csChannel, String csName, String csMessage) {
+    return LoadConfigError.log(csChannel, null, csName, csMessage);
+  }
 }

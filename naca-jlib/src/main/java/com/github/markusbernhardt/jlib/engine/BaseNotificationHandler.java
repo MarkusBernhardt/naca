@@ -6,9 +6,6 @@
  */
 package com.github.markusbernhardt.jlib.engine;
 
-public abstract class BaseNotificationHandler
-{
-
-
+public abstract class BaseNotificationHandler {
 
 }

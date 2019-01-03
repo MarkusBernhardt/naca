@@ -20,65 +20,54 @@ import java.util.regex.Pattern;
  */
 public class RegExpProcessor {
 
+  private class RegExpRule {
+    public Pattern pattern;
+    public String export;
+  }
 
-	private class RegExpRule
-	{
-		public Pattern pattern ;
-		public String export ;
-	}
-	
-	private List<RegExpRule> lstRules = new LinkedList<RegExpRule>() ;
-	private boolean caseInsensitive = false  ;
-	
-	/**
-	 * @param regexp
-	 * @param output
-	 */
-	public void AddRule(String regexp, String output) {
-		int nflags = 0 ;
-		if (this.caseInsensitive)
-		{
-			nflags = Pattern.CASE_INSENSITIVE ;
-		}
-		RegExpRule rule = new RegExpRule() ;
-		rule.pattern = Pattern.compile(regexp, nflags) ;
-		rule.export = output ;
-		lstRules.add(rule) ;
-	}
+  private List<RegExpRule> lstRules = new LinkedList<RegExpRule>();
+  private boolean caseInsensitive = false;
 
-	/**
-	 * @param originalPoneNumber
-	 * @return
-	 */
-	public String ApplyRules(String text) {
-		for (RegExpRule rule : lstRules)
-		{
-			Matcher matcher = rule.pattern.matcher(text) ;
-			if (matcher.matches())
-			{
-				if (rule.export != null && !rule.export.equals(""))
-				{
-					String out = matcher.replaceFirst(rule.export) ;
-					return out ;
-				}
-				else
-				{
-					return "" ;
-				}
-			}
-			else
-			{
-			}
-		}
-		return null ;
-	}
+  /**
+   * @param regexp
+   * @param output
+   */
+  public void AddRule(String regexp, String output) {
+    int nflags = 0;
+    if (this.caseInsensitive) {
+      nflags = Pattern.CASE_INSENSITIVE;
+    }
+    RegExpRule rule = new RegExpRule();
+    rule.pattern = Pattern.compile(regexp, nflags);
+    rule.export = output;
+    lstRules.add(rule);
+  }
 
-	/**
-	 * @param caseSensitive2
-	 */
-	public void setCaseInsensitive(boolean caseInsensitive) {
-		this.caseInsensitive = caseInsensitive ;
-	}
-	
-	
+  /**
+   * @param originalPoneNumber
+   * @return
+   */
+  public String ApplyRules(String text) {
+    for (RegExpRule rule : lstRules) {
+      Matcher matcher = rule.pattern.matcher(text);
+      if (matcher.matches()) {
+        if (rule.export != null && !rule.export.equals("")) {
+          String out = matcher.replaceFirst(rule.export);
+          return out;
+        } else {
+          return "";
+        }
+      } else {
+      }
+    }
+    return null;
+  }
+
+  /**
+   * @param caseSensitive2
+   */
+  public void setCaseInsensitive(boolean caseInsensitive) {
+    this.caseInsensitive = caseInsensitive;
+  }
+
 }

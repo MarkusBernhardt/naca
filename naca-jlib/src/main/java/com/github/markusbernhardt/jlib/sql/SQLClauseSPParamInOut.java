@@ -12,12 +12,11 @@ package com.github.markusbernhardt.jlib.sql;
 /**
  *
  * @author Pierre-Jean Ditscheid, Consultas SA
- * @version $Id: SQLClauseSPParamInOut.java,v 1.1 2007/10/16 09:47:08 u930di Exp $
+ * @version $Id: SQLClauseSPParamInOut.java,v 1.1 2007/10/16 09:47:08 u930di Exp
+ *          $
  */
-public abstract class SQLClauseSPParamInOut extends SQLClauseSPParam
-{
-	protected SQLClauseSPParamInOut(SQLClauseSPParamWay wayInOut)
-	{
-		super(wayInOut);
-	}
+public abstract class SQLClauseSPParamInOut extends SQLClauseSPParam {
+  protected SQLClauseSPParamInOut(SQLClauseSPParamWay wayInOut) {
+    super(wayInOut);
+  }
 }

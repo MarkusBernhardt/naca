@@ -15,9 +15,9 @@ import java.io.ObjectInputStream;
 /**
  *
  * @author Pierre-Jean Ditscheid, Consultas SA
- * @version $Id: BaseQueueItemFactory.java,v 1.1 2007/02/06 17:56:36 u930di Exp $
+ * @version $Id: BaseQueueItemFactory.java,v 1.1 2007/02/06 17:56:36 u930di Exp
+ *          $
  */
-public abstract class BaseQueueItemFactory
-{
-	public abstract Object read(ObjectInputStream fileIn) throws ClassNotFoundException, IOException;
+public abstract class BaseQueueItemFactory {
+  public abstract Object read(ObjectInputStream fileIn) throws ClassNotFoundException, IOException;
 }

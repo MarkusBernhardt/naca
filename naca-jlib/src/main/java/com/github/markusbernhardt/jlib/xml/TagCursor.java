@@ -16,47 +16,38 @@ package com.github.markusbernhardt.jlib.xml;
 /**
  * @author PJD
  *
- * TODO To change the template for this generated type comment go to
- * Window - Preferences - Java - Code Style - Code Templates
+ *         TODO To change the template for this generated type comment go to
+ *         Window - Preferences - Java - Code Style - Code Templates
  */
-public class TagCursor
-{
-	public TagCursor()
-	{
-	}
-	
-	void setCurrentTag(Tag tag)
-	{
-		m_tag = tag;
-	}
-	
-	Tag getCurrentTag()
-	{
-		return m_tag;
-	}
-	
-	void setInvalid()
-	{
-		m_tag = null;
-	}
-	
-	public boolean isValid()
-	{
-		return m_tag != null; 
-	}
-	
-	void setNameEnumeration(String csName)
-	{
-		m_csName = csName;
-	}
-	
-	String getNameEnumeration()
-	{
-		return m_csName;
-	}
-	
-	
-	Tag m_tag = null;
-	String m_csName = null;
-	
+public class TagCursor {
+  public TagCursor() {
+  }
+
+  void setCurrentTag(Tag tag) {
+    m_tag = tag;
+  }
+
+  Tag getCurrentTag() {
+    return m_tag;
+  }
+
+  void setInvalid() {
+    m_tag = null;
+  }
+
+  public boolean isValid() {
+    return m_tag != null;
+  }
+
+  void setNameEnumeration(String csName) {
+    m_csName = csName;
+  }
+
+  String getNameEnumeration() {
+    return m_csName;
+  }
+
+  Tag m_tag = null;
+  String m_csName = null;
+
 }

@@ -6,67 +6,54 @@
  */
 package com.github.markusbernhardt.jlib.log;
 
-
 import org.w3c.dom.Element;
 
-import com.github.markusbernhardt.jlib.xml.*;
+import com.github.markusbernhardt.jlib.xml.Tag;
 
 /**
  * @author U930DI
  *
- * TODO To change the template for this generated type comment go to
- * Window - Preferences - Java - Code Style - Code Templates
+ *         TODO To change the template for this generated type comment go to
+ *         Window - Preferences - Java - Code Style - Code Templates
  */
-public class LogCenterConsole extends LogCenter
-{
-	public LogCenterConsole(LogCenterLoader logCenterLoader)
-	{
-		super(logCenterLoader);
-	}
-	
-	public void loadSpecificsEntries(Element el)
-	{
-	}
-			
-	public void loadSpecificsEntries(Tag tagLogCenter)
-	{
-		m_csFormat = tagLogCenter.getVal("Format");
-	}
-	
-	boolean open()
-	{
-		return true;
-	}
-	
-	boolean closeLogCenter()
-	{
-		return true;
-	}
-	
-	void preSendOutput()
-	{
-	}
-	
-	protected void sendOutput(LogParams logParam)
-	{
-		String csOut = m_patternLayout.format(logParam, 0);
-		System.out.println(csOut);
-	}
-	
-	void postSendOutput()
-	{
-	}
+public class LogCenterConsole extends LogCenter {
+  public LogCenterConsole(LogCenterLoader logCenterLoader) {
+    super(logCenterLoader);
+  }
 
-	
-	String getFormat()
-	{
-		return m_csFormat;
-	}
-	
-	private String m_csFormat = null;
-	
-	public String getType()
-	{
-		return "LogCenterConsole";
-	}
+  public void loadSpecificsEntries(Element el) {
+  }
+
+  public void loadSpecificsEntries(Tag tagLogCenter) {
+    m_csFormat = tagLogCenter.getVal("Format");
+  }
+
+  boolean open() {
+    return true;
+  }
+
+  boolean closeLogCenter() {
+    return true;
+  }
+
+  void preSendOutput() {
+  }
+
+  protected void sendOutput(LogParams logParam) {
+    String csOut = m_patternLayout.format(logParam, 0);
+    System.out.println(csOut);
+  }
+
+  void postSendOutput() {
+  }
+
+  String getFormat() {
+    return m_csFormat;
+  }
+
+  private String m_csFormat = null;
+
+  public String getType() {
+    return "LogCenterConsole";
+  }
 }

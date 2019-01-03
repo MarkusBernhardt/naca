@@ -9,10 +9,10 @@
  */
 package com.github.markusbernhardt.jlib.log;
 
-public abstract class BasePluginMarker
-{
-	public abstract void info(String csText);
-	public abstract void warn(String csText);
-	public abstract void error(String csText);
-}
+public abstract class BasePluginMarker {
+  public abstract void info(String csText);
 
+  public abstract void warn(String csText);
+
+  public abstract void error(String csText);
+}

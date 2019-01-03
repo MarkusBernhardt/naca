@@ -16,41 +16,40 @@ package com.github.markusbernhardt.jlib.classLoader;
  * 
  * @see com.vladium.utils.DumpClassScope
  * 
- * @author (C) <a href="http://www.javaworld.com/columns/jw-qna-index.shtml">Vlad Roubtsov</a>, 2003
+ * @author (C)
+ *         <a href="http://www.javaworld.com/columns/jw-qna-index.shtml">Vlad
+ *         Roubtsov</a>, 2003
  */
-public class DumpClassLoader
-{
-    public DumpClassLoader()
-    {
-    }
-    
-    public void dump(Object obj)
-    {
-    	dump(obj.getClass().getClassLoader());
-    }
-    
-    public void dump(ClassLoader classLoader)
-    {
-        // option (1): manually enumerating class loaders
-//        final ClassLoader appLoader = ClassLoader.getSystemClassLoader ();
-//        final ClassLoader extLoader = appLoader.getParent ();        
-//        final ClassLoader [] loaders = new ClassLoader [] {appLoader, extLoader};
+public class DumpClassLoader {
+  public DumpClassLoader() {
+  }
 
-        // option (2): enumerating class loaders for all classes on the call stack
-  //      final ClassLoader [] loaders = ClassScope.getCallerClassLoaderTree ();
-        
-        // option (3): enumerating class loaders using the registry
-   //     final ClassLoader [] loaders = ClassLoaderRegistry.getClassLoaders ();
-        
-        final Class [] classes = DumpClassScope.getLoadedClasses(classLoader);
-        for (int c = 0; c < classes.length; ++ c)
-        {
-            final Class cls = classes [c];
+  public void dump(Object obj) {
+    dump(obj.getClass()
+            .getClassLoader());
+  }
 
-     //       System.out.print (cls.getName () + ":");
-      //      System.out.println (" loaded by " + cls.getClassLoader().getClass().getName() + " [" + cls.getClassLoader().toString() + "]");
-        //    System.out.println (" from [" + DumpClassScope.getClassLocation (cls) + "]");
-        }
+  public void dump(ClassLoader classLoader) {
+    // option (1): manually enumerating class loaders
+    // final ClassLoader appLoader = ClassLoader.getSystemClassLoader ();
+    // final ClassLoader extLoader = appLoader.getParent ();
+    // final ClassLoader [] loaders = new ClassLoader [] {appLoader, extLoader};
+
+    // option (2): enumerating class loaders for all classes on the call stack
+    // final ClassLoader [] loaders = ClassScope.getCallerClassLoaderTree ();
+
+    // option (3): enumerating class loaders using the registry
+    // final ClassLoader [] loaders = ClassLoaderRegistry.getClassLoaders ();
+
+    final Class[] classes = DumpClassScope.getLoadedClasses(classLoader);
+    for (int c = 0; c < classes.length; ++c) {
+      final Class cls = classes[c];
+
+      // System.out.print (cls.getName () + ":");
+      // System.out.println (" loaded by " + cls.getClassLoader().getClass().getName()
+      // + " [" + cls.getClassLoader().toString() + "]");
+      // System.out.println (" from [" + DumpClassScope.getClassLocation (cls) + "]");
     }
+  }
 
 }

@@ -12,12 +12,11 @@ package com.github.markusbernhardt.jlib.sqlMapper;
 /**
  *
  * @author Pierre-Jean Ditscheid, Consultas SA
- * @version $Id: OrderSegmentDescending.java,v 1.1 2007/12/04 14:00:23 u930di Exp $
+ * @version $Id: OrderSegmentDescending.java,v 1.1 2007/12/04 14:00:23 u930di
+ *          Exp $
  */
-public class OrderSegmentDescending extends OrderSegment
-{
-	public OrderSegmentDescending(String csColName)
-	{
-		super(csColName, false);
-	}
+public class OrderSegmentDescending extends OrderSegment {
+  public OrderSegmentDescending(String csColName) {
+    super(csColName, false);
+  }
 }

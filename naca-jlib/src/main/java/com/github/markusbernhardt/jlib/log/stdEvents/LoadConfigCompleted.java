@@ -15,23 +15,18 @@ import com.github.markusbernhardt.jlib.log.LogEventType;
 import com.github.markusbernhardt.jlib.log.LogFlowStd;
 import com.github.markusbernhardt.jlib.log.LogLevel;
 
+public class LoadConfigCompleted extends LogEvent {
+  public LoadConfigCompleted(String csProduct) {
+    super(LogEventType.Remark, LogFlowStd.Monitoring, LogLevel.Normal, csProduct);
+  }
 
-public class LoadConfigCompleted extends LogEvent
-{
-	public LoadConfigCompleted(String csProduct)
-	{
-		super(LogEventType.Remark, LogFlowStd.Monitoring, LogLevel.Normal, csProduct);
-	}
-	
-	public static LogEvent log(String csChannel, String csProduct, String csMessage)
-	{
-		LoadConfigCompleted event = new LoadConfigCompleted(csProduct);
-		Log.log(csChannel, event, csMessage);
-		return event;
-	}
+  public static LogEvent log(String csChannel, String csProduct, String csMessage) {
+    LoadConfigCompleted event = new LoadConfigCompleted(csProduct);
+    Log.log(csChannel, event, csMessage);
+    return event;
+  }
 
-	public static LogEvent log(String csChannel, String csMessage)
-	{
-		return LoadConfigCompleted.log(csChannel, null, csMessage);
-	}
+  public static LogEvent log(String csChannel, String csMessage) {
+    return LoadConfigCompleted.log(csChannel, null, csMessage);
+  }
 }

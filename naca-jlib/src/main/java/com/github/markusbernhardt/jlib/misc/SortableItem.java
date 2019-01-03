@@ -6,7 +6,6 @@
  */
 package com.github.markusbernhardt.jlib.misc;
 
-public abstract class SortableItem
-{
-	public abstract int compare(SortableItem item);
+public abstract class SortableItem {
+  public abstract int compare(SortableItem item);
 }

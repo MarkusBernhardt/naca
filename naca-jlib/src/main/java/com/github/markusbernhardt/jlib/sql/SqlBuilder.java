@@ -6,22 +6,18 @@
  */
 package com.github.markusbernhardt.jlib.sql;
 
-public class SqlBuilder
-{
-	private StringBuilder sb;
-	
-	public SqlBuilder()
-	{
-		sb = new StringBuilder();
-	}
-	
-	public void append(String sql)
-	{
-		sb.append(sql + "\r\n");
-	}
-	
-	public String toString()
-	{
-		return sb.toString();
-	}
+public class SqlBuilder {
+  private StringBuilder sb;
+
+  public SqlBuilder() {
+    sb = new StringBuilder();
+  }
+
+  public void append(String sql) {
+    sb.append(sql + "\r\n");
+  }
+
+  public String toString() {
+    return sb.toString();
+  }
 }

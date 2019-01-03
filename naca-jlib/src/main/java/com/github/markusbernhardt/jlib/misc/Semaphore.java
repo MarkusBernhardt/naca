@@ -10,70 +10,57 @@ package com.github.markusbernhardt.jlib.misc;
 /**
  * @author PJD
  *
- * TODO To change the template for this generated type comment go to
- * Window - Preferences - Java - Code Style - Code Templates
+ *         TODO To change the template for this generated type comment go to
+ *         Window - Preferences - Java - Code Style - Code Templates
  */
-public class Semaphore
-{
-    private int counter;
+public class Semaphore {
+  private int counter;
 
-    public Semaphore() 
-    {
-        this(0);
-    }
+  public Semaphore() {
+    this(0);
+  }
 
-    public Semaphore(int n) 
-    {
-        if (n < 0) 
-        	throw new IllegalArgumentException(n + " < 0");
-        counter = n;
-    }
+  public Semaphore(int n) {
+    if (n < 0)
+      throw new IllegalArgumentException(n + " < 0");
+    counter = n;
+  }
 
-    /**
-     * Increments internal counter, possibly awakening a thread
-     * wait()ing in acquire().
-     */
-    public synchronized void release() 
-    {
-        if (counter == 0) 
-        {
-            notify();
-        }
-        counter++;
+  /**
+   * Increments internal counter, possibly awakening a thread wait()ing in
+   * acquire().
+   */
+  public synchronized void release() {
+    if (counter == 0) {
+      notify();
     }
+    counter++;
+  }
 
-    /**
-     * Decrements internal counter, blocking if the counter is already
-     * zero.
-     *
-     * @exception InterruptedException passed from this.wait().
-     */
-    public synchronized void acquire() throws InterruptedException 
-	{
-        while (counter == 0) 
-        {
-            wait();
-        }
-        counter--;
+  /**
+   * Decrements internal counter, blocking if the counter is already zero.
+   *
+   * @exception InterruptedException
+   *              passed from this.wait().
+   */
+  public synchronized void acquire() throws InterruptedException {
+    while (counter == 0) {
+      wait();
     }
+    counter--;
+  }
 
-    public synchronized boolean acquireNoInterrupt() 
-	{
-        while (counter == 0) 
-        {
-            try
-			{
-				wait();
-			}
-			catch (InterruptedException e)
-			{
-				e.printStackTrace();
-				return false;
-			}
-        }
-        counter--;
-        return true;
+  public synchronized boolean acquireNoInterrupt() {
+    while (counter == 0) {
+      try {
+        wait();
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+        return false;
+      }
     }
-    
+    counter--;
+    return true;
+  }
 
 }

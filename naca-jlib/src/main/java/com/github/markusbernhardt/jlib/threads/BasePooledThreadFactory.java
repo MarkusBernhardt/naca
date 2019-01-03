@@ -12,9 +12,9 @@ package com.github.markusbernhardt.jlib.threads;
 /**
  *
  * @author Pierre-Jean Ditscheid, Consultas SA
- * @version $Id: BasePooledThreadFactory.java,v 1.1 2006/11/29 07:35:36 u930di Exp $
+ * @version $Id: BasePooledThreadFactory.java,v 1.1 2006/11/29 07:35:36 u930di
+ *          Exp $
  */
-public abstract class BasePooledThreadFactory
-{
-	public abstract PooledThread make(PoolOfThreads owningPool); 
+public abstract class BasePooledThreadFactory {
+  public abstract PooledThread make(PoolOfThreads owningPool);
 }

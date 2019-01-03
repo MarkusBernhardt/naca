@@ -6,14 +6,11 @@
  */
 package com.github.markusbernhardt.jlib.threads;
 
-public class ThreadPoolRequestTerminaison extends ThreadPoolRequest
-{
-	ThreadPoolRequestTerminaison()
-	{
-		super(true);	
-	}
-	
-	public void execute()
-	{
-	}
+public class ThreadPoolRequestTerminaison extends ThreadPoolRequest {
+  ThreadPoolRequestTerminaison() {
+    super(true);
+  }
+
+  public void execute() {
+  }
 }
